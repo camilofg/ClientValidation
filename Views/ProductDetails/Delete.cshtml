@@ -1,0 +1,80 @@
+﻿@model Repository.ProductDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ProductDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdSerial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdSerial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdReview)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdReview)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Artisan.ArtisanName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Artisan.ArtisanName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Material.Material1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Material.Material1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Origin.Origin1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Origin.Origin1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InInventory.InInvGUID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InInventory.InInvGUID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

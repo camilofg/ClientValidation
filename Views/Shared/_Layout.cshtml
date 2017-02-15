@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Client Validator</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/menu.css")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Client Validator", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+            <div class="navbar-collapse collapse">
+                @if (Session["AuthenticatedUser"] != null)
+                {
+                    <ul class="nav navbar-nav" id="menu">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="menu">
+                            @Html.ActionLink("Products", "Index", "ProductDetails")
+                            <ul class="submenu" id="MenuProds">
+                                <li>@Html.ActionLink("Register Product", "Create", "ProductDetails")</li>
+                                <li>@Html.ActionLink("Assign Inventory", "Inventory", "Products")</li>
+                                <li>@Html.ActionLink("Sell", "Sell", "Products")</li>
+                            </ul>
+                        </li>
+                        <li class="menu">
+                            @Html.ActionLink("Configurations", "Index", "Origins")
+                            <ul class="submenu" id="MenuProds">
+                                <li>@Html.ActionLink("Origin", "Register", "Products")</li>
+                                <li>@Html.ActionLink("Artisan", "Sell", "Products")</li>
+                                <li>@Html.ActionLink("Material", "Sell", "Products")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                }
+                @Html.Partial("_LoginPartial")
+            </div>
+
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

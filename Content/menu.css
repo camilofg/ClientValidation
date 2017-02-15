@@ -1,0 +1,7 @@
+﻿.submenu {
+    display:none;
+}
+
+.menu:hover > #MenuProds {
+    display: block;
+}

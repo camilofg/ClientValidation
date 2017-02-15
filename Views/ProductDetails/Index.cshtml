@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Repository.ProductDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdSerial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdReview)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Artisan.ArtisanName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Material.Material1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Origin.Origin1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdURL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdSerial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdReview)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artisan.ArtisanName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Material.Material1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Origin.Origin1)
+        </td>
+        <td>
+            <img src="myqr.qr?u=@Url.Content(item.ProdURL)" alt="Image" />
+                 @*<img ng-src="{{url.id}}.qr?u={{ url.RedirectURL }}" />*@
+            @*@Html.DisplayFor(modelItem => item.ProdURL)*@
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProdID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProdID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProdID })
+        </td>
+    </tr>
+}
+
+</table>

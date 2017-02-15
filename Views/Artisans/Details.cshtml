@@ -1,0 +1,58 @@
+﻿@model Repository.Artisan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Artisan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtisanName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtisanName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtisanDocNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtisanDocNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtisanDocType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtisanDocType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtisanAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtisanAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtisanTel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtisanTel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ArtisanID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

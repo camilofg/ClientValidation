@@ -1,0 +1,74 @@
+﻿@model Repository.GUID_Encrypt_Base64_Result
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product Detail</h4>
+    <hr />
+    <table class="table table-sm">
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.ProdSerial)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.ProdSerial)
+                </td>
+                <td rowspan="6" align="center" style="vertical-align:central; ">
+                    Serial Number: @Html.DisplayFor(model => model.ProdSerial) 
+                    <br />
+                    <img style="align-content:center" src="../../myqr.qr?u=@Url.Content(Model.encode)" alt="Image" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   @Html.DisplayNameFor(model => model.ProdName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.ProdName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.ProdReview)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.ProdReview)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.ArtisanName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.ArtisanName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   @Html.DisplayNameFor(model => model.Material)
+                </td>
+                <td>
+                   @Html.DisplayFor(model => model.Material)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Origin)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Origin)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProdID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
